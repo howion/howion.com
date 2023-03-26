@@ -1,0 +1,17 @@
+.m-container {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.m-max {
+    &-lx {
+        max-width: $view-lx-width;
+        padding: 0 $view-lx-width-px;
+    }
+
+    &-xl {
+        max-width: $view-xl-width;
+        padding: 0 $view-xl-width-px;
+    }
+}

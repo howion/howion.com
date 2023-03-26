@@ -1,0 +1,84 @@
+.m-spotifycp {
+    // position: fixed;
+    margin: 0 auto;
+    min-height: 64px;
+    padding: 7px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    background-color: rgba(#fff, 0.06);
+    border: 1px solid rgba(#fff, 0.1);
+    max-width: 500px;
+    margin-bottom: min(10vw, 19200px);
+
+    $color-spotify: #1ed760;
+
+    &-music {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        column-gap: 14px;
+
+        &-pic {
+            width: 50px;
+            height: 50px;
+            border-radius: 32px;
+        }
+
+        &-detail {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+
+            &-name {
+                font-size: 18px;
+                font-weight: 600;
+                color: #fff;
+            }
+
+            &-name,
+            &-credits {
+                flex: 1;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                width: 100%;
+                max-width: 350px;
+            }
+
+            &-credits {
+                font-size: 16px;
+                font-weight: 500;
+                margin-top: 2px;
+                color: rgba(#fff, 0.3);
+
+                > a {
+                    color: rgba(#fff, 0.3);
+                    transition: color $transition-default-speed;
+
+                    &::after {
+                        content: ', ';
+                        color: rgba(#fff, 0.3) !important;
+                    }
+
+                    &:last-child::after {
+                        content: '';
+                    }
+
+                    &:hover {
+                        color: $color-spotify;
+                    }
+                }
+            }
+        }
+    }
+
+    &-icon {
+        width: 32px;
+        height: 32px;
+        margin-right: 11px;
+    }
+}

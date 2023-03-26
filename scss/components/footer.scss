@@ -1,0 +1,61 @@
+.m-footer {
+    position: relative;
+    margin-top: 130px;
+    margin-bottom: 100px;
+    border-top: 1px solid #0a0a0a;
+    padding-top: 72px;
+
+    &-container {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        // &::before {
+        //     position: absolute;
+        //     content: '';
+        //     display: block;
+        //     height: 1px;
+        //     background-color: rgba(#fff, 0.04);
+        //     width: calc(100% - 2*$view-lx-width-px);
+        //     top: -72px;
+        //     left: $view-lx-width-px;
+        // }
+    }
+
+    &-sections {
+        display: flex;
+        column-gap: 100px;
+        padding-top: 2px;
+    }
+
+    &-section {
+        color: rgba(#fff, 0.25);
+
+        // font-family: 'Neue Montreal';
+        // text-transform: uppercase;
+        // letter-spacing: 1px;
+        font-size: $footer-font-size;
+        letter-spacing: 0.5px;
+        // text-transform: uppercase;
+
+        &-title {
+            font-weight: 600;
+            color: #fff;
+            text-transform: uppercase;
+        }
+    }
+
+    &-ul {
+        margin-top: 28px;
+    }
+
+    &-li {
+        cursor: pointer;
+        margin-top: 14px;
+
+        &:hover {
+            color: $color-primary-yellow;
+        }
+    }
+}

@@ -1,0 +1,76 @@
+.m-home {
+    &-header {
+        position: relative;
+        z-index: 0;
+        // overflow: hidden;
+
+        &-canvas {
+            position: relative;
+            width: 100%;
+            // position: absolute;
+            // top: 0;
+            // left: 0;
+            // width: 100%;
+            // height: 100%;
+            // max-height: 720px;
+            // min-height: 480px;
+
+            &-i1 {
+                position: absolute;
+                top: 150px;
+                left: -250px;
+                // background-color: #fff;
+                border: 10px dashed $color-primary-red;
+                width: 500px;
+                height: 500px;
+                border-radius: 1000px;
+            }
+        }
+
+        &-title {
+            font-family: 'Neue Montreal', 'Inter', sans-serif;
+            font-size: 6rem;
+            font-weight: 400;
+            margin-top: min(10vw, 1920px * 10);
+            margin-bottom: min(10vw, 1920px * 10);
+            text-align: justify;
+            user-select: none;
+
+            > em {
+                display: inline-block;
+                position: relative;
+                font-style: normal;
+                z-index: 0;
+
+                // color: $color-primary-yellow;
+
+                &::before {
+                    // display: none !important;
+
+                    $px: 0.75rem;
+                    $py: 0.3rem;
+
+                    position: absolute;
+                    display: block;
+                    width: 100%;
+                    height: 5.5rem;
+                    top: 1.125rem - $py - 0.25rem;
+                    left: -$px;
+                    padding: $py $px;
+                    box-sizing: content-box;
+                    border: 2px solid $color-primary-red;
+                    content: '';
+                    // background-color: $color-back;
+                    background: repeating-linear-gradient(
+                        -45deg,
+                        rgba($color-back, 0.7),
+                        rgba($color-back, 0.7) 10px,
+                        rgba($color-primary-red, 1) 10px,
+                        rgba($color-primary-red, 1) 20px
+                    );
+                    z-index: 2;
+                }
+            }
+        }
+    }
+}

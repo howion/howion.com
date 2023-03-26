@@ -1,0 +1,33 @@
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+em,
+pre,
+ul,
+a,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    user-select: none;
+
+    &:focus {
+        outline: none;
+    }
+}
