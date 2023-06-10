@@ -8,6 +8,7 @@ import { SpotifyCP } from '/components/spotifycp'
 import { Socials } from '/components/socials'
 import { Navbar } from '/components/navbar'
 import { Footer } from '/components/footer'
+import Draggable from 'react-draggable'
 
 const HomeCanvas = dynamic(() => import('/components/home-canvas'), {
     ssr: false
@@ -34,6 +35,19 @@ export default function Home(): FCReturn {
                     </h1>
                     <SpotifyCP />
                 </div>
+                <Draggable handle=".m-window-head">
+                    <div className="m-home-header-window m-window-container">
+                        <div className="m-window-head">
+                            <div className="m-window-head-lhs">
+                                <span>README.md</span>
+                            </div>
+                            <div className="m-window-head-rhs">
+                                <i className="material-icons">close</i>
+                            </div>
+                        </div>
+                        <div className="m-window-content"></div>
+                    </div>
+                </Draggable>
             </header>
             <Socials />
             <Footer />

@@ -1,0 +1,44 @@
+.m-window {
+    &-container {
+        overflow: hidden;
+        border-radius: 8px;
+        width: 600px;
+        height: 400px;
+        background-color: rgba(#fff, 0.01);
+        border: 1px solid #404240;
+        backdrop-filter: blur(12px);
+        position: absolute;
+        z-index: 999;
+    }
+
+    &-head {
+        width: 100%;
+        height: 48px;
+        background-color: rgba(#fff, 0.1);
+        border-bottom: 1px solid #404240;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 0 16px 0 24px;
+        user-select: none;
+        color: #ccc;
+        cursor: move;
+
+        &-lhs {
+            flex: 1;
+        }
+
+        &-rhs {
+            >i {
+                font-size: 20px !important;
+                cursor: pointer !important;
+
+                &:hover {
+                    color: #fff;
+                }
+            }
+        }
+    }
+}

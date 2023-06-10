@@ -45,7 +45,7 @@ module.exports = {
     compress: true, // disable if proxy already compresses
     optimizeFonts: true,
     eslint: {
-        ignoreDuringBuilds: true
+        ignoreDuringBuilds: false
     },
     async headers() {
         if (isDev) {
@@ -61,9 +61,5 @@ module.exports = {
     }
     // experimental: {
     //     optimizeCss: true,
-    // }
-    // webpack: (config, options) => {
-    //     config.plugins.push(new StylelintPlugin())
-    //     return config
     // }
 }
