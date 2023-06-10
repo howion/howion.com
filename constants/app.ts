@@ -6,7 +6,7 @@ export const App = {
     isProduction,
     version: '0.1.0',
     defaults: {
-        description: "Howion's Personal Website",
+        description: 'Howion\'s Personal Website',
         author: 'howion',
         keywords: ['howion', 'omer', 'mert', 'coskun', 'omer mert coskun'],
         themeColor: '#010102'

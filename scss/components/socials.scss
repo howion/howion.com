@@ -1,11 +1,11 @@
 .m-socials {
     display: grid;
     margin-bottom: 100px;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
     position: relative;
 
     &-social {
-        $--border: 1px solid #0a0a0a;
+        $--border: 1px solid lighten(#000, 4%);
         box-sizing: content-box;
         // $--border: 1px solid rgba(#fff, 0.04);
 
@@ -51,7 +51,7 @@
         }
 
         &:hover {
-            background-color: rgba(#fff, 0.04);
+            background-color: rgba(#fff, 0.08);
             border: 1px solid var(--hover-color, rgba($color-primary-red, 1));
             overflow: 1;
         }

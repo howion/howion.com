@@ -14,6 +14,8 @@ import { useRef } from 'react'
 // SCSS
 // import 'locomotive-scroll/dist/locomotive-scroll.css'
 import { Inter } from 'next/font/google'
+
+import '/public/font/neue_montreal/stylesheet.css'
 import '/scss/_index.scss'
 
 export const inter = Inter({

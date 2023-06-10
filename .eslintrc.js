@@ -22,6 +22,7 @@ module.exports = {
         '@typescript-eslint/no-non-null-assertion': [0],
         'react/prop-types': [0],
         'no-control-regex': [0],
+        'sonarjs/no-duplicate-string': [0],
         'unicorn/prevent-abbreviations': [0],
         'unicorn/text-encoding-identifier-case': [0],
         'unicorn/no-abusive-eslint-disable': [0],
@@ -31,6 +32,7 @@ module.exports = {
         'unicorn/consistent-function-scoping': [0],
         'unicorn/prefer-spread': [0],
         'unicorn/no-null': [0],
+        'unicorn/no-unsafe-regex': [0],
 
         // WARN
         '@typescript-eslint/ban-ts-comment': [
