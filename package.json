@@ -1,11 +1,11 @@
 {
-  "name": "anatolia-19th",
+  "name": "howioncom",
   "version": "0.1.0",
   "private": false,
   "scripts": {
     "dev": "next dev",
     "fix": "npx eslint --fix .",
-    "build": "npx prebuild && next build",
+    "build": "next build",
     "lint": "npx eslint ."
   },
   "dependencies": {

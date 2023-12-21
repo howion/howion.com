@@ -1,14 +1,14 @@
 import React, { useRef } from 'react'
 import { Meta } from '/components/meta'
 import dynamic from 'next/dynamic'
-// import type P5 from 'p5'
 import { useDidMount } from 'rooks'
+import Draggable from 'react-draggable'
+
 import { TransitorService } from '/services/transitor.service'
 import { SpotifyCP } from '/components/spotifycp'
 import { Socials } from '/components/socials'
 import { Navbar } from '/components/navbar'
 import { Footer } from '/components/footer'
-import Draggable from 'react-draggable'
 
 const HomeCanvas = dynamic(() => import('/components/home-canvas'), {
     ssr: false
