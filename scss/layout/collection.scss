@@ -1,0 +1,18 @@
+.m-collection {
+    &-section {
+        display: flex;
+        flex-direction: column;
+        row-gap: 36px;
+    }
+
+    &-item {
+        font-size: 48px;
+        font-weight: 700;
+        color: #6B6B6B;
+        text-decoration: underline;
+
+        &:hover {
+            color: #1ed760;
+        }
+    }
+}

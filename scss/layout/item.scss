@@ -1,0 +1,17 @@
+.m-item {
+    padding-top: 120px;
+    padding-bottom: 64px;
+
+    &-title {
+        font-size: 96px;
+        user-select: text;
+    }
+
+    &-para {
+        margin-top: 64px;
+        user-select: text;
+        font-family: inherit;
+        color: #6B6B6B;
+        line-height: 1.4;
+    }
+}
