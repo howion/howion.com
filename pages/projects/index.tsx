@@ -35,6 +35,9 @@ export default function Home(): FCReturn {
             </header>
 
             <section className="m-collection-section m-container m-max-lx">
+                <Link target="_blank" href="https://anatolia19.com/" className="m-collection-item">
+                   Anatolia: 19th Century<i className="m-collection-item-icon material-icons">open_in_new</i>
+                </Link>
                 <Link target="_blank" href="https://mathematica.howion.com/" className="m-collection-item">
                     Mathematica Par Excellence<i className="m-collection-item-icon material-icons">open_in_new</i>
                 </Link>

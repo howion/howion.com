@@ -9,7 +9,7 @@
     "lint": "npx eslint ."
   },
   "dependencies": {
-    "@types/locomotive-scroll": "^4.1.0",
+    "@studio-freight/lenis": "^1.0.29",
     "@types/node": "20.2.6",
     "@types/p5": "^1.6.2",
     "@types/react": "18.2.11",
@@ -19,7 +19,6 @@
     "axios": "^1.4.0",
     "cheet.js": "^0.3.3",
     "classnames": "^2.3.2",
-    "locomotive-scroll": "^4.1.4",
     "modern-normalize": "^2.0.0",
     "moment": "^2.29.4",
     "next": "^13.4.4",
@@ -31,7 +30,6 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-draggable": "^4.4.5",
-    "react-locomotive-scroll": "^0.2.2",
     "react-p5": "^1.3.35",
     "rooks": "^7.14.1",
     "rxjs": "^7.8.1",

@@ -388,6 +388,11 @@
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.6.1.tgz#9ab8f811930d7af3e3d549183a50884f9eb83f36"
   integrity sha512-UY+FGM/2jjMkzQLn8pxcHGMaVLh9aEitG3zY2CiY7XHdLiz3bZOwa6oDxNqEMv7zZkV+cj5DOdz0cQ1BP5Hjgw==
 
+"@studio-freight/lenis@^1.0.29":
+  version "1.0.29"
+  resolved "https://registry.yarnpkg.com/@studio-freight/lenis/-/lenis-1.0.29.tgz#d7fcbf16c2ca1ddcb0d19007851e2920006985d4"
+  integrity sha512-z/qS8ato5m2wlxQREYj5iALcxMrhhm06vEiLqYzLI+3HmpPzPscmJ8cXNiay4bj692vOot2hyTA3WP++AQVoKA==
+
 "@swc/helpers@0.5.2":
   version "0.5.2"
   resolved "https://registry.yarnpkg.com/@swc/helpers/-/helpers-0.5.2.tgz#85ea0c76450b61ad7d10a37050289eded783c27d"

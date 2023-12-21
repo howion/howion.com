@@ -165,8 +165,8 @@
         background-color: $screen-color;
         z-index: 10000;
 
-        width: 300px;
-        height: 300px;
+        width: 600px;
+        height: 600px;
         border-width: 100vh 100vw;
         border-style: solid;
         border-color: #000;
@@ -189,6 +189,55 @@
 
             //     transition: all 30ms;
             // }
+        }
+    }
+
+    &-card {
+        position: relative;
+        width: 920px;
+        height: 530px;
+        border-radius: 8px;
+        background-color: #161616;
+        border: 1px solid #383838;
+        margin: auto;
+        cursor: pointer;
+
+        &:hover {
+            background-color: lighten(#161616, 5%);
+            border: 1px solid lighten(#383838, 5%);
+        }
+
+        &-top {
+            &-lhs, &-rhs {
+                display: flex;
+                flex-direction: column;
+                row-gap: 8px;
+                position: absolute;
+                top: 64px;
+                color: #94A3B8;
+            }
+
+            &-lhs {
+                left: 64px;
+            }
+
+            &-rhs {
+                right: 64px;
+            }
+        }
+
+        &-emblem {
+            position: absolute;
+            left: 64px;
+            bottom: 64px;
+            color: #94A3B8 !important;
+
+            >span {
+                &::before {
+                    background-color: #94A3B8;
+                }
+                color: #94A3B8 !important;
+            }
         }
     }
 }

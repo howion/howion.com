@@ -11,6 +11,7 @@ import { Socials } from '/components/socials'
 import { Navbar } from '/components/navbar'
 import { Footer } from '/components/footer'
 import { Loader } from '/components/loader'
+import { Emblem } from '/components/emblem'
 
 const HomeCanvas = dynamic(() => import('/components/home-canvas'), {
     ssr: false
@@ -63,13 +64,13 @@ export default function Home(): FCReturn {
                 </Draggable>
             </header>
 
-            <Loader />
+            {/* <Loader /> */}
 
             <i className="material-icons m-home-portal-button">lightbulb</i>
 
             {/* <div className="m-home-portal" style={{
-                marginLeft: telescopeX,
-                marginTop: telescopeY
+                marginLeft: pointerRef.x - 150,
+                marginTop: pointerRef.y - 150
             }}>
             </div> */}
 
@@ -146,6 +147,20 @@ export default function Home(): FCReturn {
                 </div>
             </section>
 
+            <section className="m-container m-max-lx is-mt-120">
+                <div className="m-home-card">
+                    <Emblem className="m-home-card-emblem" />
+                    <span className="m-home-card-top-lhs">
+                        {/* <span>me@howion.com</span> */}
+                        {/* <span>+90 534 634 0134</span> */}
+                        <span>me(a)howion.com</span>
+                        {/* <span>/howion</span> */}
+                    </span>
+                    <div className="m-home-card-top-rhs">
+                        <span>+90 534 634 01 34</span>
+                    </div>
+                </div>
+            </section>
 
             <Footer />
         </>

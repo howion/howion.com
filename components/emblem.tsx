@@ -1,8 +1,15 @@
 import React from 'react'
+import c from 'classnames'
 
-export function Emblem(): FCReturn {
+export interface EmblemProps {
+    className?: text
+}
+
+export function Emblem(props: EmblemProps): FCReturn<EmblemProps> {
+    const { className } = props
+
     return (
-        <div className="m-emblem">
+        <div className={c('m-emblem', className)}>
             OMER_MERT_
             <br />
             COSKUN
