@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import { Meta } from '/components/meta'
 import { useDidMount } from 'rooks'
 
@@ -79,7 +79,7 @@ export default function Home(): FCReturn {
             <Navbar />
 
             <section className="m-item m-container m-max-lx">
-                <h1 className="m-item-title">Salve, salve. Parve!</h1>
+                <h1 className="m-item-title">Salve, Salve. Parve!</h1>
                 <pre className="m-item-para">{POEM}</pre>
             </section>
 

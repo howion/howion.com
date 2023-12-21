@@ -35,8 +35,9 @@ export default function Home(): FCReturn {
             </header>
 
             <section className="m-collection-section m-container m-max-lx">
-                <Link href="/poems/salve-salve-parve" className="m-collection-item">Salve, salve. Parve!</Link>
+                <Link href="/poems/salve-salve-parve" className="m-collection-item">Salve, Salve. Parve!</Link>
                 <Link href="/poems/sans-titre" className="m-collection-item">Sans Titre</Link>
+                {/* <Link href="/poems/ankara" className="m-collection-item">Ankara</Link> */}
             </section>
 
             <Footer />
