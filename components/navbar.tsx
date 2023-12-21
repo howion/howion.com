@@ -30,6 +30,11 @@ export function Navbar(props: HasClass): FCReturn {
                                 POEMS <sup>02</sup>
                             </Link>
                         </li>
+                        <li className="m-nav-li">
+                            <Link href="/projects">
+                                PROJECTS <sup>04</sup>
+                            </Link>
+                        </li>
                         {/* <li className="m-nav-li">RESUME</li> */}
                         <li className="m-nav-li">
                             {/* PGP {'<---'}

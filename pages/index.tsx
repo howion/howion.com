@@ -1,16 +1,16 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { Meta } from '/components/meta'
 import { useDidMount } from 'rooks'
 import Draggable from 'react-draggable'
 import dynamic from 'next/dynamic'
-import Image from 'next/image'
 
 import { TransitorService } from '/services/transitor.service'
 import { SpotifyCP } from '/components/spotifycp'
 import { Socials } from '/components/socials'
 import { Navbar } from '/components/navbar'
 import { Footer } from '/components/footer'
+import { Loader } from '/components/loader'
 
 const HomeCanvas = dynamic(() => import('/components/home-canvas'), {
     ssr: false
@@ -18,9 +18,18 @@ const HomeCanvas = dynamic(() => import('/components/home-canvas'), {
 
 export default function Home(): FCReturn {
     const canvasWrapperRef = useRef<HTMLDivElement>(null)
+    const [pointerRef, setPointerRef] = useState({ x: 0, y: 0 })
 
     useDidMount(async () => {
         TransitorService.hideTransitor()
+        window.document.addEventListener('mousemove', (e) => {
+            const { clientX, clientY } = e
+
+            setPointerRef({
+                x: clientX,
+                y: clientY
+            })
+        })
     })
 
     return (
@@ -53,6 +62,16 @@ export default function Home(): FCReturn {
                     </div>
                 </Draggable>
             </header>
+
+            <Loader />
+
+            <i className="material-icons m-home-portal-button">lightbulb</i>
+
+            {/* <div className="m-home-portal" style={{
+                marginLeft: telescopeX,
+                marginTop: telescopeY
+            }}>
+            </div> */}
 
             <Socials />
 

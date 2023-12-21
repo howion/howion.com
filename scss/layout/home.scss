@@ -135,10 +135,60 @@
             height: 412px;
             border-radius: 8px;
             padding: 0 48px;
+
+            &:hover {
+                background-color: rgba(#fff, 0.1);
+                outline: 1px solid rgba(#fff, 0.2);
+                cursor: pointer;
+            }
         }
 
         &-name {
             color: #94A3B8;
+        }
+    }
+
+    &-portal {
+        &-button {
+            cursor: pointer;
+            position: fixed;
+            top: 24px;
+            left: 24px;
+            z-index: 10001;
+        }
+
+        $screen-color: rgba(#000, 0.8);
+
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: $screen-color;
+        z-index: 10000;
+
+        width: 300px;
+        height: 300px;
+        border-width: 100vh 100vw;
+        border-style: solid;
+        border-color: #000;
+        top: -100vh;
+        left: -100vw;
+        cursor: none;
+        box-sizing: content-box;
+
+        background: radial-gradient(ellipse at center,  rgba(#000, 0) 0%,rgba(#000, 0) 50%, #000 60%, #000 100%);
+        &-telescope {
+            // &-telescope {
+            //     $size: 128px;
+            //     position: absolute;
+
+            //     width: $size;
+            //     height: $size;
+            //     background-color: #fff;
+            //     border-radius: $size/2;
+            //     // mix-blend-mode: difference;
+
+            //     transition: all 30ms;
+            // }
         }
     }
 }
