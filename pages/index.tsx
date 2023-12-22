@@ -64,7 +64,7 @@ export default function Home(): FCReturn {
                 </Draggable>
             </header>
 
-            {/* <Loader /> */}
+            <Loader />
 
             <i className="material-icons m-home-portal-button">lightbulb</i>
 
