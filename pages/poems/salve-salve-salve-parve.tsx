@@ -79,7 +79,7 @@ export default function Home(): FCReturn {
             <Navbar />
 
             <section className="m-item m-container m-max-lx">
-                <h1 className="m-item-title">Salve, Salve. Parve!</h1>
+                <h1 className="m-item-title">Salvé, salvé, salvé, parve?</h1>
                 <pre className="m-item-para">{POEM}</pre>
             </section>
 
