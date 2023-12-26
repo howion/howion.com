@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import c from 'classnames'
 import { useDidMount } from 'rooks'
 
@@ -11,7 +11,7 @@ export interface FancyCursorProps {
     className?: text
 }
 
-export type FancyCursorStatus = 'default' | 'hidden' | 'pointer' | 'disabled'
+export type FancyCursorStatus = 'default' | 'hidden' | 'pointer' | 'disabled' | text
 
 export const FANCY_CURSOR_SPEED_OUTER = 0.075
 export const FANCY_CURSOR_SPEED_INNER = 0.15
@@ -27,7 +27,6 @@ export function FancyCursor(props: FancyCursorProps): FCReturn<FancyCursorProps>
     const outerRef = useRef<HTMLDivElement>(null)
     const innerRef = useRef<HTMLDivElement>(null)
     const raf = useRef<number | null>(null)
-    const elementPosition = useRef<FancyCursorPosition>({ x: 0, y: 0 })
     const cursorPosition = useRef<FancyCursorPosition>({ x: 0, y: 0 })
 
     const [status, setStatus] = useState<FancyCursorStatus>('hidden')
@@ -70,16 +69,10 @@ export function FancyCursor(props: FancyCursorProps): FCReturn<FancyCursorProps>
         if (!raf.current) raf.current = requestAnimationFrame(animate)
     }, [animate])
 
-    // const handleMouseViewportIn = useCallback((e) => {
-    //     setStatus('default')
-    // }, [])
-
-    const handleMouseViewportOut = useCallback((e) => {
-        setStatus('hidden')
-    }, [])
+    const handleMouseViewportOut = useCallback(() => setStatus('hidden'), [])
 
     const handleMouseOver = useCallback((e: MouseEvent) => {
-        const path = e.composedPath && e.composedPath()
+        const path = e.composedPath && e.composedPath() as HTMLElement[]
         path.reverse()
 
         let cursor = 'default'
@@ -87,26 +80,44 @@ export function FancyCursor(props: FancyCursorProps): FCReturn<FancyCursorProps>
         for (const node of path) {
             if (!('hasAttribute' in node)) continue
             const dataCursor = (node as any).getAttribute('data-cursor')
-            if (dataCursor) cursor = dataCursor
+
+            if (dataCursor) {
+                cursor = dataCursor
+                continue
+            }
+
+            if (node.tagName === 'A') {
+                cursor = 'pointer'
+                continue
+            }
         }
 
-        setStatus(cursor as FancyCursorStatus)
+        setStatus(cursor)
     }, [])
+
+    useEffect(() => {
+        if (status === 'disabled') {
+            window.document.body.classList.remove('is-cursor-enabled')
+        } else {
+            window.document.body.classList.add('is-cursor-enabled')
+        }
+    }, [status])
 
     useDidMount(() => {
         if (didMount.current) return
         didMount.current = true
 
         window.document.addEventListener('mousemove', handleMouseMove)
-        // window.document.addEventListener('mouseenter', handleMouseViewportIn)
         window.document.addEventListener('mouseover', handleMouseOver)
         window.document.addEventListener('mouseleave', handleMouseViewportOut)
     })
 
     return (
         <>
-            <div ref={outerRef} className={c('fancy-cursor-outer', className, 'cursor-' + status)} />
-            <div ref={innerRef} className="fancy-cursor-inner" />
+            <div className={c('fancy-cursor-container', className, 'cursor-' + status)}>
+                <div ref={outerRef} className="fancy-cursor-outer" />
+                <div ref={innerRef} className="fancy-cursor-inner" />
+            </div>
         </>
     )
 }

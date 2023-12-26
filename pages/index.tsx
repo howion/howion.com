@@ -50,8 +50,8 @@ export default function Home(): FCReturn {
                 </div>
 
                 <Draggable handle=".m-window-head">
-                    <div className="m-home-header-window m-window-container" data-cursor-hidden="a">
-                        <div className="m-window-head">
+                    <div className="m-home-header-window m-window-container">
+                        <div className="m-window-head" data-cursor="disabled">
                             <div className="m-window-head-lhs">
                                 <span>README.md</span>
                             </div>

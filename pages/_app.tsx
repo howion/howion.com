@@ -68,6 +68,7 @@ export default function App({ Component, pageProps, router }: FCProps<AppProps>)
 
             <div id="app" ref={appRef} className={inter.className}>
                 <div className="m-noise" />
+                <div className="m-desktoponly">This website is available for desktops ({'>='} 1920px) only.</div>
                 {/*<FancyCursorProvider>
                         <FancyCursor className="app-cursor-inner"/>
                         <FancyCursor className="app-cursor-outer"/>

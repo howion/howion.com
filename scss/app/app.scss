@@ -15,7 +15,7 @@ body {
     background-color: $color-back;
     color: #fff;
 
-    * {
+    &.is-cursor-enabled * {
         cursor: none !important;
     }
 }
