@@ -50,7 +50,7 @@ export default function Home(): FCReturn {
                 </div>
 
                 <Draggable handle=".m-window-head">
-                    <div className="m-home-header-window m-window-container">
+                    <div className="m-home-header-window m-window-container" data-cursor-hidden="a">
                         <div className="m-window-head">
                             <div className="m-window-head-lhs">
                                 <span>README.md</span>
@@ -64,7 +64,7 @@ export default function Home(): FCReturn {
                 </Draggable>
             </header>
 
-            <Loader />
+            {/* <Loader /> */}
 
             <i className="material-icons m-home-portal-button">lightbulb</i>
 

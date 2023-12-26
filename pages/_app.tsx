@@ -1,17 +1,12 @@
 import type { AppProps } from 'next/app'
-import { useDidMount } from 'rooks'
+
 import { useRef } from 'react'
+import { useDidMount } from 'rooks'
+import { Inter } from 'next/font/google'
 import Lenis from '@studio-freight/lenis'
 
 import { Meta } from '/components/meta'
-
-// const Easter = dynamic(() => import('/components/easter'), {
-// ssr: false
-// })
-
-// SCSS
-// import 'locomotive-scroll/dist/locomotive-scroll.css'
-import { Inter } from 'next/font/google'
+import { FancyCursor } from '/components/fancy-cursor'
 
 import '/public/font/neue_montreal/stylesheet.css'
 import '/scss/_index.scss'
@@ -50,24 +45,26 @@ export default function App({ Component, pageProps, router }: FCProps<AppProps>)
 
         requestAnimationFrame(raf)
 
-        const splash = window.document.getElementById('ma-splash')
+        // const splash = window.document.getElementById('ma-splash')
 
-        if (splash) {
-            splash.classList.add('hidden')
-            if (route === 'map') splash.style.display = 'none'
-        }
+        // if (splash) {
+        //     splash.classList.add('hidden')
+        //     if (route === 'map') splash.style.display = 'none'
+        // }
 
-        setTimeout(
-            () => {
-                window.document.body.style.overflow = 'overlay'
-            },
-            splash ? 2750 : 0
-        )
+        // setTimeout(
+        //     () => {
+        //         window.document.body.style.overflow = 'overlay'
+        //     },
+        //     splash ? 2750 : 0
+        // )
     })
 
     return (
         <>
             <Meta __setViewport />
+
+            <FancyCursor />
 
             <div id="app" ref={appRef} className={inter.className}>
                 <div className="m-noise" />

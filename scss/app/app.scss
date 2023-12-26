@@ -14,6 +14,10 @@ body {
     font-feature-settings: 'calt' 1, 'tnum' 1, 'frac' 1, 'case' 1, 'ccmp' 1;
     background-color: $color-back;
     color: #fff;
+
+    * {
+        cursor: none !important;
+    }
 }
 
 #app {

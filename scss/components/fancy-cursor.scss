@@ -1,0 +1,55 @@
+.fancy-cursor {
+    $size-outer: 48px;
+    $size-inner: 8px;
+
+    &-outer,
+    &-inner {
+        position: fixed;
+        z-index: 99999;
+        display: block;
+        pointer-events: none;
+
+        mix-blend-mode: difference;
+        // transform: translate3d(-50%, -50%, 0) scale(var(--scale, 1));
+    }
+
+    &-outer {
+        --speed: 0.15;
+        opacity: 1;
+        will-change: top, left;
+
+        width: $size-outer;
+        height: $size-outer;
+        background-color: #fff;
+        border-radius: $size-outer;
+        //border: 2px solid rgba(#000, 0.5);
+        //background-color: rgba(#000, 1);
+        transition: transform 500ms, opacity 500ms;
+
+        &.cursor-hidden {
+            opacity: 0;
+        }
+
+        &.cursor-pointer {
+            --scale: 2;
+            --speed: 0.075;
+
+            //    border-radius: 8px;
+            //    background-color: transparent;
+            //    border: 4px solid rgba(#000, 0.5);
+            //    mix-blend-mode: unset;
+            //    top:    calc(var(--focus-y) - 10px) !important;
+            //    left:   calc(var(--focus-x) - 10px) !important;
+            //    width:  calc(var(--focus-w) + 20px) !important;
+            //    height: calc(var(--focus-h) + 20px) !important;
+        }
+    }
+
+    &-inner {
+        width: $size-inner;
+        height: $size-inner;
+        background-color: #fff1f2;
+        border-radius: $size-inner;
+        transform: translate(($size-outer - $size-inner)/2, ($size-outer - $size-inner)/2);
+    }
+}
