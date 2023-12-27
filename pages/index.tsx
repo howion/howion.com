@@ -4,6 +4,7 @@ import { Meta } from '/components/meta'
 import { useDidMount } from 'rooks'
 import Draggable from 'react-draggable'
 import dynamic from 'next/dynamic'
+import c from 'classnames'
 
 import { TransitorService } from '/services/transitor.service'
 import { SpotifyCP } from '/components/spotifycp'
@@ -17,26 +18,40 @@ const HomeCanvas = dynamic(() => import('/components/home-canvas'), {
     ssr: false
 })
 
+export interface ArtworkProps {
+    no: number
+}
+
+export function Artwork({ no }: ArtworkProps): FCReturn<ArtworkProps> {
+    return (
+        <div className="m-artwork-wrapper">
+            <div className="m-artwork-canvas">
+                <img
+                    src={`/img/artwork/no${no}.svg`}
+                    alt=""
+                />
+            </div>
+            <div className="m-artwork-name">No. {no}</div>
+        </div>
+    )
+}
+
+const ARTWORKS = [1, 2, 3, 4, 5, 6]
+
 export default function Home(): FCReturn {
     const canvasWrapperRef = useRef<HTMLDivElement>(null)
-    const [pointerRef, setPointerRef] = useState({ x: 0, y: 0 })
+    const [selectedArtwork, setSelectedArtwork] = useState<number | null>(null)
 
     useDidMount(async () => {
         TransitorService.hideTransitor()
-        window.document.addEventListener('mousemove', (e) => {
-            const { clientX, clientY } = e
-
-            setPointerRef({
-                x: clientX,
-                y: clientY
-            })
-        })
     })
 
     return (
         <>
             <Meta />
+
             <Navbar />
+
             <header className="m-home-header" ref={canvasWrapperRef}>
                 <HomeCanvas />
 
@@ -64,7 +79,7 @@ export default function Home(): FCReturn {
                 </Draggable>
             </header>
 
-            {/* <Loader /> */}
+            {process?.env.NODE_ENV === 'development' ? null : <Loader /> }
 
             <i className="material-icons m-home-portal-button">lightbulb</i>
 
@@ -84,66 +99,13 @@ export default function Home(): FCReturn {
                     </h2>
                 </div>
 
-                <div className="m-home-artwork-container is-mt-120">
-                    <div className="m-home-artwork-wrapper">
-                        <div className="m-home-artwork-canvas">
-                            <img
-                                src="/img/artwork/no1.svg"
-                                alt=""
-                            />
-                        </div>
-                        <div className="m-home-artwork-name">No. 1</div>
-                    </div>
-
-                    <div className="m-home-artwork-wrapper">
-                        <div className="m-home-artwork-canvas">
-                            <img
-                                src="/img/artwork/no2.svg"
-                                alt=""
-                            />
-                        </div>
-                        <div className="m-home-artwork-name">No. 2</div>
-                    </div>
-
-                    <div className="m-home-artwork-wrapper">
-                        <div className="m-home-artwork-canvas">
-                            <img
-                                src="/img/artwork/no3.svg"
-                                alt=""
-                            />
-                        </div>
-                        <div className="m-home-artwork-name">No. 3</div>
-                    </div>
-
-                    <div className="m-home-artwork-wrapper">
-                        <div className="m-home-artwork-canvas">
-                            <img
-                                src="/img/artwork/no4.svg"
-                                alt=""
-                            />
-                        </div>
-                        <div className="m-home-artwork-name">No. 4</div>
-                    </div>
-
-                    <div className="m-home-artwork-wrapper">
-                        <div className="m-home-artwork-canvas">
-                            <img
-                                src="/img/artwork/no5.svg"
-                                alt=""
-                            />
-                        </div>
-                        <div className="m-home-artwork-name">No. 5</div>
-                    </div>
-
-                    <div className="m-home-artwork-wrapper">
-                        <div className="m-home-artwork-canvas">
-                            <img
-                                src="/img/artwork/no6.svg"
-                                alt=""
-                            />
-                        </div>
-                        <div className="m-home-artwork-name">No. 6</div>
-                    </div>
+                <div className="m-artwork-container is-mt-120">
+                    {ARTWORKS.map((no) => (
+                        <Artwork
+                            key={no}
+                            no={no}
+                        />
+                    ))}
                 </div>
             </section>
 

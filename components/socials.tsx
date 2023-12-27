@@ -20,6 +20,7 @@ import {
     siSteam,
     siTwitter
 } from 'simple-icons'
+import { invertColor } from '/utils/color.util'
 
 interface SocialProps {
     icon: SimpleIcon
@@ -46,12 +47,11 @@ function Social(props: SocialProps): FCReturn {
                 xmlns="http://www.w3.org/2000/svg"
                 width={64}
                 height={64}
-                fill={color}
+                fill={props.dark ? '#fff' : invertColor(color)}
                 viewBox="0 0 24 24"
             >
                 <path d={props.icon.path} />
             </svg>
-            {/* <img className="m-socials-social-icon" src={'/img/socials/' + props.icon + '.svg'} alt="" /> */}
         </a>
     )
 }

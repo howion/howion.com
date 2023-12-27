@@ -1,7 +1,10 @@
 import React from 'react'
+import Link from 'next/link'
+import c from 'classnames'
+
 import { Anchor } from './anchor'
 import { Emblem } from '/components/emblem'
-import Link from 'next/link'
+import { inter } from '/pages/_app'
 
 export function Navbar(props: HasClass): FCReturn {
     return (
@@ -14,7 +17,7 @@ export function Navbar(props: HasClass): FCReturn {
                     </span>
                 </div>
             </div> */}
-            <nav className={'m-nav is-scroll'}>
+            <nav className={c('m-nav is-scroll', inter.className, props.className)}>
                 <div className="m-nav-container m-container m-max-lx">
                     <Anchor href="/" animate>
                         <Emblem />
