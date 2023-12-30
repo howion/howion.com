@@ -35,7 +35,7 @@ export function Navbar(props: HasClass): FCReturn {
                         </li>
                         <li className="m-nav-li">
                             <Link href="/projects">
-                                PROJECTS <sup>04</sup>
+                                PROJECTS <sup>05</sup>
                             </Link>
                         </li>
                         {/* <li className="m-nav-li">RESUME</li> */}
