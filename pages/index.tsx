@@ -80,7 +80,7 @@ export default function Home(): FCReturn {
 
             {process?.env.NODE_ENV === 'development' ? null : <Loader /> }
 
-            <i className="material-icons m-home-portal-button">lightbulb</i>
+            {/* <i className="material-icons m-home-portal-button">lightbulb</i> */}
 
             {/* <div className="m-home-portal" style={{
                 marginLeft: pointerRef.x - 150,
