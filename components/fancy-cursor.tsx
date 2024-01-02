@@ -13,8 +13,8 @@ export interface FancyCursorProps {
 
 export type FancyCursorStatus = 'default' | 'hidden' | 'pointer' | 'disabled' | text
 
-export const FANCY_CURSOR_SPEED_OUTER = 0.075
-export const FANCY_CURSOR_SPEED_INNER = 0.15
+export const FANCY_CURSOR_SPEED_OUTER = 0.1
+export const FANCY_CURSOR_SPEED_INNER = 0.5
 
 export const LERP = (a: number, b: number, n: number): number => (1 - n) * a + n * b
 
@@ -40,13 +40,14 @@ export function FancyCursor(props: FancyCursorProps): FCReturn<FancyCursorProps>
         const nx = LERP(ex, cx, FANCY_CURSOR_SPEED_OUTER)
         const ny = LERP(ey, cy, FANCY_CURSOR_SPEED_OUTER)
 
-        const delta = Math.sqrt(Math.pow(cx - ex, 2) + Math.pow(cy - ey, 2))
+        // const delta = Math.sqrt(Math.pow(cx - ex, 2) + Math.pow(cy - ey, 2))
 
-        if (delta < 0.001) {
-            cancelAnimationFrame(raf.current!)
-            raf.current = null
-            return
-        }
+        // if (delta < 0.001) {
+        //     cancelAnimationFrame(raf.current!)
+        //     raf.current = null
+        //     return
+        // }
+        console.log('s')
 
         outerRef.current!.style.top = `${ny}px`
         outerRef.current!.style.left = `${nx}px`
@@ -54,8 +55,8 @@ export function FancyCursor(props: FancyCursorProps): FCReturn<FancyCursorProps>
         const e2x = Number.parseInt(innerRef.current!.style.left) || 0
         const e2y = Number.parseInt(innerRef.current!.style.top) || 0
 
-        const n2x = LERP(e2x, cx, FANCY_CURSOR_SPEED_INNER) - 1
-        const n2y = LERP(e2y, cy, FANCY_CURSOR_SPEED_INNER) - 1
+        const n2x = LERP(e2x, cx, FANCY_CURSOR_SPEED_INNER)
+        const n2y = LERP(e2y, cy, FANCY_CURSOR_SPEED_INNER)
 
         innerRef.current!.style.top = `${n2y}px`
         innerRef.current!.style.left = `${n2x}px`
@@ -66,8 +67,7 @@ export function FancyCursor(props: FancyCursorProps): FCReturn<FancyCursorProps>
     const handleMouseMove = useCallback((e: MouseEvent) => {
         cursorPosition.current.x = e.clientX // window.innerWidth
         cursorPosition.current.y = e.clientY // window.innerHeight
-        if (!raf.current) raf.current = requestAnimationFrame(animate)
-    }, [animate])
+    }, [])
 
     const handleMouseViewportOut = useCallback(() => setStatus('hidden'), [])
 
@@ -110,6 +110,7 @@ export function FancyCursor(props: FancyCursorProps): FCReturn<FancyCursorProps>
         window.document.addEventListener('mousemove', handleMouseMove)
         window.document.addEventListener('mouseover', handleMouseOver)
         window.document.addEventListener('mouseleave', handleMouseViewportOut)
+        if(!raf.current) raf.current = requestAnimationFrame(animate)
     })
 
     return (

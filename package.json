@@ -24,6 +24,7 @@
     "next": "^13.4.4",
     "next-seo": "^6.0.0",
     "nextjs-cors": "^2.1.2",
+    "optiscroll": "^3.2.1",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^8.4.2",
     "prisma": "^4.15.0",

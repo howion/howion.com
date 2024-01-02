@@ -14,6 +14,7 @@ export default function _404(): ReactElement {
     return (
         <>
             <Meta title="404" noindex={true} />
+            <h1 className="m-404-text">404</h1>
         </>
     )
 }

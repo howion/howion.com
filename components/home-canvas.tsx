@@ -1,8 +1,6 @@
 // 'use client'
 
-import React, { useRef } from 'react'
-import { useDidMount } from 'rooks'
-// import p5 from 'p5'
+import React from 'react'
 
 // if (typeof window !== 'undefined') {
 //     // @ts-ignore mutate windows

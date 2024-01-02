@@ -54,7 +54,12 @@ export function SpotifyCP(): FCReturn {
                     </span>
                 </div>
             </div>
-            <Image className="m-spotifycp-icon" src={spotifyIcon} alt="" />
+            <Image
+                priority={true}
+                className="m-spotifycp-icon"
+                src={spotifyIcon}
+                alt=""
+            />
         </div>
     )
 }

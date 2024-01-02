@@ -19,7 +19,6 @@
     }
 
     &-container.cursor-pointer &-outer {
-        // --speed: 0.075;
         --scale: 2;
     }
 
@@ -35,7 +34,6 @@
     }
 
     &-outer {
-        --speed: 0.15;
         opacity: 1;
         will-change: top, left;
 

@@ -4,7 +4,6 @@ import { Meta } from '/components/meta'
 import { useDidMount } from 'rooks'
 import Draggable from 'react-draggable'
 import dynamic from 'next/dynamic'
-import c from 'classnames'
 
 import { TransitorService } from '/services/transitor.service'
 import { SpotifyCP } from '/components/spotifycp'

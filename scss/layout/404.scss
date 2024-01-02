@@ -1,7 +1,107 @@
-// #app-main-404 {
-//     @include m-prefer-quality;
-//     background-color: #fff;
-// }
+@keyframes malfunction-animation {
+    0% {
+        clip: rect(3px, 9999px, 86px, 0);
+    }
+
+    6.66666667% {
+        clip: rect(27px, 9999px, 128px, 0);
+    }
+
+    13.33333333% {
+        clip: rect(35px, 9999px, 71px, 0);
+    }
+
+    20% {
+        clip: rect(10px, 9999px, 134px, 0);
+    }
+
+    26.66666667% {
+        clip: rect(23px, 9999px, 145px, 0);
+    }
+
+    33.33333333% {
+        clip: rect(40px, 9999px, 80px, 0);
+    }
+
+    40% {
+        clip: rect(33px, 9999px, 153px, 0);
+    }
+
+    46.66666667% {
+        clip: rect(50px, 9999px, 84px, 0);
+    }
+
+    53.33333333% {
+        clip: rect(57px, 9999px, 188px, 0);
+    }
+
+    60% {
+        clip: rect(79px, 9999px, 65px, 0);
+    }
+
+    66.66666667% {
+        clip: rect(21px, 9999px, 168px, 0);
+    }
+
+    73.33333333% {
+        clip: rect(62px, 9999px, 119px, 0);
+    }
+
+    80% {
+        clip: rect(4px, 9999px, 126px, 0);
+    }
+
+    86.66666667% {
+        clip: rect(10px, 9999px, 133px, 0);
+    }
+
+    93.33333333% {
+        clip: rect(51px, 9999px, 196px, 0);
+    }
+
+    to {
+        clip: rect(77px, 9999px, 73px, 0);
+    }
+}
+
+$m404-color-back: #000;
+
+#app-main-404 {
+    @include m-prefer-quality;
+    background-color: $m404-color-back;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.m-404-text {
+    position: relative;
+    font-weight: 900;
+    font-size: min(128px, 10vw);
+
+    &::before,
+    &::after {
+        content: "404";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: $m404-color-back;
+    }
+
+    &::before {
+        left: 2px;
+        clip: rect(24px, 550px, 90px, 0);
+        animation: malfunction-animation 4s linear infinite alternate-reverse;
+    }
+
+    &::after {
+        left: -2px;
+        clip: rect(85px, 550px, 140px, 0);
+        animation: malfunction-animation 2s linear infinite alternate-reverse;
+    }
+}
 
 // .m-404 {
 

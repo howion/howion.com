@@ -29,6 +29,7 @@ export const inter = Inter({
 export default function App({ Component, pageProps, router }: FCProps<AppProps>): FCReturn<AppProps> {
     let route = router.route.split('/')[1].trim() ?? ''
     if (!route) route = 'home'
+
     const appRef = useRef<HTMLDivElement>(null)
     const isAppMounted = useRef(false)
 
@@ -68,7 +69,7 @@ export default function App({ Component, pageProps, router }: FCProps<AppProps>)
 
             <div id="app" ref={appRef} className={inter.className}>
                 <div className="m-noise" />
-                <div className="m-desktoponly">This website is available for desktops ({'>='} 1920px) only.</div>
+                {/* <div className="m-desktoponly">This website is available for desktops ({'>='} 1920px) only.</div> */}
                 {/*<FancyCursorProvider>
                         <FancyCursor className="app-cursor-inner"/>
                         <FancyCursor className="app-cursor-outer"/>
