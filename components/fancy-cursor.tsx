@@ -47,7 +47,6 @@ export function FancyCursor(props: FancyCursorProps): FCReturn<FancyCursorProps>
         //     raf.current = null
         //     return
         // }
-        console.log('s')
 
         outerRef.current!.style.top = `${ny}px`
         outerRef.current!.style.left = `${nx}px`
