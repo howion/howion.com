@@ -63,6 +63,8 @@ export default function Home(): FCReturn {
                     <SpotifyCP />
                 </div>
 
+                <img src="https://methodor.com/_next/image?url=%2Fdemo3.png&w=640&q=75" alt="" />
+
                 <Draggable handle=".m-window-head">
                     <div className="m-home-header-window m-window-container">
                         <div className="m-window-head" data-cursor="disabled">
