@@ -30,7 +30,7 @@ export function Navbar(props: HasClass): FCReturn {
                         </li>
                         <li className="m-nav-li">
                             <Link href="/poems">
-                                POEMS <sup>02</sup>
+                                POEMS <sup>01</sup>
                             </Link>
                         </li>
                         <li className="m-nav-li">
